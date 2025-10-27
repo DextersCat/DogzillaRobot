@@ -1,0 +1,53 @@
+PROJECT: Amy Voice Assistant (Pi 5 • Debian Trixie • Python 3.13.5)
+DATE: 2025-10-23
+REVISION: v1.0 (Golden Snapshot Baseline)
+
+PHASE 1 — FOUNDATION & RUNTIME INTEGRITY
+------------------------------------------------------------
+Block A — Environment Validation .......... COMPLETE
+Block B — Unified Environment Control ..... COMPLETE
+Block C — Runtime Integrity Checks ........ COMPLETE
+
+Golden Snapshot V1.0:
+  Manifest: ~/logs/checks/amy_snapshot_GOLDEN_V1.0_2025-10-23_200201.manifest
+  Archive : ~/monty_backups/archives/amy_snapshot_GOLDEN_V1.0_2025-10-23_200201.tar.gz
+  Verified by CEO (Spencer)
+  Status: PASS (Audit + Service Health Verified)
+
+PHASE 2 — KEYWORD & INTENT VALIDATION
+------------------------------------------------------------
+Objective:
+  Validate wake word "Astra" triggers Amy and routes correctly to intent parsing.
+
+Scope:
+  • Confirm Porcupine wake word "Astra" detection.
+  • Confirm verbal response to “What's the time?” via Piper (Amy voice).
+  • Ensure no false triggers; single active process only.
+  • Capture timing data: detection → response latency.
+
+Cadence:
+  1. Observe: Daily audit @09:00 via amy_audit.sh (must PASS).
+  2. Check: Wake word file presence (astra.ppn) + mic readiness.
+  3. Test: Run keyword → time intent; record evidence log.
+  4. Run: Enable continuous mode after confirmed PASS.
+
+Evidence:
+  All Phase 2 test logs stored under ~/logs/checks/phase2_*.log
+
+Risk Controls:
+  • No unverified edits; proof via manifest only.
+  • No silent audio changes.
+  • All new intents logged + timestamped.
+
+CTO Directive 001-A:
+  “No Drift, No Guesswork — Proof before Action.”
+
+Next Actions:
+  • 09:00 Audit check (expect PASS)
+  • Prepare and run Phase 2 Test Block 1 — “Astra → What’s the time?”
+  • Log outcome to TECHNICAL_LEDGER.txt
+
+Signed:
+  CEO: Spencer Dixon
+  CTO: Astra (GPT-5)
+  QA & Morale: Teddy (Observer, Paw Approval Pending)

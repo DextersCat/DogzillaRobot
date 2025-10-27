@@ -1,0 +1,57 @@
+Mini Astra — Voice-Pipeline Fault-Tree & Recovery Plan v1.0
+CTO Deliverable — 2025-10-24
+
+1) Overview (Stages)
+A  Wake-word detection         — astra_listen_loop.sh + /tmp/wake_once.py
+B  Post-wake handoff           — astra_listen_loop.sh → postwake_router.py
+C  Recording & STT             — record_wav() in postwake_router.py
+D  NLU routing                 — route() in postwake_router.py
+E  TTS via Piper               — piper + aplay to by-name ALSA
+F  Motion (Wave)               — safe_wave() in amy_wake.py
+
+2) One-Line Verification (each ≤30s)
+A: timeout 5 bash ~/amy_core/astra_listen_loop.sh > /tmp/ll.log 2>&1 ; grep -q "wake detected" /tmp/ll.log && echo PASS || echo FAIL
+B: grep -E "postwake_router|returned" ~/logs/astra_listen_*.log | tail -n2
+C: (export AUDIODEV='plughw:CARD=sndrpihifiberry,DEV=0' AREC_DEV='plughw:CARD=Device,DEV=0'; python3 ~/amy_core/postwake_router.py)
+D: tail -n 5 $(ls -t ~/logs/pipeline_*.log | head -1) | grep -i '"intent"'
+E: echo test | piper --model ~/voices/en_US-amy-medium.onnx --output_file /tmp/p.wav && aplay -D plughw:CARD=sndrpihifiberry,DEV=0 /tmp/p.wav
+F: python3 - <<PY
+from picrawler import Picrawler
+c=Picrawler(); c.do_action("wave"); c.do_action("home")
+PY
+
+3) Expected Log Signatures
+A: “[listen] waiting for wake word …” then “wake detected”
+B: “[listen] calling postwake_router” and “postwake_router returned 0”
+C: “record {"ok": true, …}” then “stt {"text": "…"}”
+D: “nlu {"intent": "time"}”
+E: “[piper] Loaded voice … Real-time factor …” + aplay line
+F: (optional) robot action logs or physical wave
+
+4) Common Failures → Minimal Corrective Actions
+• “Yes?” + wave but no reply:
+  — Handoff not executed or capture too short → add explicit log around router call; extend settle to 0.35s; record 5s.
+• STT hears only “Astro”:
+  — Capture window too short / bleed-in → settle 0.35s, record 5s.
+• No audio out:
+  — Wrong ALSA device → enforce by-name OUTPUT=plughw:CARD=sndrpihifiberry,DEV=0
+• “aplay: error 524”:
+  — Amp off / device busy → run amp_on, ensure no competing aplay.
+• No wake detection:
+  — /tmp/wake_once.py missing / key issue → restore symlink to ~/amy_core/tools/wake_once.py and verify access key.
+• Wave timing:
+  — safe_wave() fires on wake; move to post-reply (Phase 3 tweak) after pipeline is green.
+
+5) Recovery Sequence (Full Stack)
+1. Verify env: echo $AUDIODEV $AREC_DEV  → expect by-name strings
+2. Stage A: Porcupine check (timeout line above)
+3. Stage B: Confirm router entry/exit lines present in listen log
+4. Stage C: Direct router test (export by-name; run postwake_router.py)
+5. If C fails but A/B pass → increase settle to 0.35s; record_secs=5
+6. When C passes → start amy.service and run end-to-end test
+7. Snapshot: tar -czf ~/monty_backups/miniAstra_recovered_$(date +%Y%m%d_%H%M%S).tar.gz ~/amy_core ~/logs /etc/systemd/system/amy.service
+
+6) Governance
+Directive 001-A: Observe → Prove → Act. No edits without: purpose, verification, expected result, rollback line. All proof written to ~/logs/checks/.
+
+— End v1.0 —

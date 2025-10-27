@@ -1,0 +1,23 @@
+[Unit]
+Description=Astra AI Companion Complete System
+After=network.target sound.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=spencer
+Group=spencer
+WorkingDirectory=/home/spencer/amy_core
+ExecStart=/home/spencer/amy_core/start_astra_complete.sh
+ExecStop=/bin/bash -c 'pkill -f mobile_api_server; pkill -f vilib; pkill -f web_server'
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/spencer/bin
+Environment=PYTHONPATH=/home/spencer/vilib:/home/spencer/amy_core
+
+[Install]
+WantedBy=multi-user.target

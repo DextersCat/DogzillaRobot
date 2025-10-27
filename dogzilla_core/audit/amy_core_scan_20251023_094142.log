@@ -1,0 +1,15 @@
+AMY_CORE SCAN — 2025-10-23T09:41:42+01:00
+Suspicious file patterns:
+[CANDIDATE] /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_102816
+[CANDIDATE] /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101908
+[CANDIDATE] /home/spencer/amy_core/amy_wake.py.bak_20251021_214142
+[CANDIDATE] /home/spencer/amy_core/postwake_router.py.bak_2025-10-22_110023
+[CANDIDATE] /home/spencer/amy_core/postwake_router.py.bak_2025-10-22_105457
+[CANDIDATE] /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_110003
+[CANDIDATE] /home/spencer/amy_core/diag_phase2_20251021_092156.tar.gz
+[CANDIDATE] /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101615
+[CANDIDATE] /home/spencer/amy_core/amy_wake.py.bak_20251021_214514
+[CANDIDATE] /home/spencer/amy_core/amy_wake.py.bak_20251021_214324
+[CANDIDATE] /home/spencer/amy_core/amy_wake.py.bak_20251021_213824
+
+Suspicious directories:

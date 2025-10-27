@@ -1,0 +1,50 @@
+🌙 SLEEP STATE FEATURE SPECIFICATION
+=====================================
+
+CONCEPT: Add a sleep/wake toggle that complements the existing desk safe mode for intelligent power and resource management.
+
+SLEEP MODE BEHAVIOR:
+😴 WHEN SLEEPING:
+  - Voice responses disabled (except wake commands)
+  - Camera feed paused/dimmed to save resources  
+  - Status shows "😴 Astra is sleeping"
+  - Still monitors for "Astra wake up" or wake button
+  - Sensors continue monitoring but don't announce
+  - LED indicators dimmed (if available)
+
+🌅 WAKE TRIGGERS:
+  - Manual button press on mobile/web interface
+  - Voice command: "Astra wake up" or "Astra activate"
+  - Proximity detection (if person comes very close)
+  - Scheduled wake time (optional future feature)
+
+UI INTEGRATION:
+📱 MOBILE APP:
+  - Add sleep toggle button next to desk safe mode
+  - Show sleep status with 😴 emoji when sleeping
+  - Wake button prominent when in sleep mode
+  - Dim interface colors when Astra is sleeping
+
+🌐 WEB INTERFACE:
+  - Sleep/wake toggle in control panel
+  - Visual indication of sleep state
+  - Disabled voice command buttons when sleeping
+  - Quick wake button always available
+
+🔧 TECHNICAL IMPLEMENTATION:
+  - Add sleep state variable to API server
+  - Modify speak_text() to check sleep state
+  - Add /api/sleep endpoint for state control
+  - Update mobile and web UIs with sleep controls
+  - Preserve desk safe mode as separate safety feature
+
+BENEFITS:
+⚡ Power efficiency when not actively needed
+🔇 Noise reduction during quiet times  
+🎛️ Better user control over Astra's activity level
+🛡️ Maintains safety with desk safe mode separation
+🌙 Natural day/night cycle adaptation
+
+This complements desk safe mode perfectly:
+- Desk Safe Mode = Movement disabled for physical safety
+- Sleep Mode = Voice/activity disabled for power/quiet time

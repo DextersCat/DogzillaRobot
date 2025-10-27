@@ -1,0 +1,201 @@
+Thu 23 Oct 09:20:22 BST 2025
+=== HOME LEVEL ===
+total 11G
+drwx------ 41 spencer spencer 4.0K Oct 22 23:36 .
+drwxr-xr-x  3 root    root    4.0K Sep  9 09:38 ..
+-rw-rw-r--  1 spencer spencer 7.7K Oct 22 13:07 amy_astra_intake_20251022_130728.tar.gz
+drwxrwxr-x  3 spencer spencer 4.0K Oct 21 15:29 amy_backup
+drwxrwxr-x  4 spencer spencer 4.0K Oct 21 13:33 .amy_backups
+-rwxrwxr-x  1 spencer spencer 6.1K Oct 21 11:06 amy_collect.sh
+drwxrwxr-x  9 spencer spencer 4.0K Oct 23 09:20 amy_core
+-rw-rw-r--  1 spencer spencer 2.5K Oct 22 19:15 amy_core_review_2025-10-22_191539_filelist.txt
+-rw-rw-r--  1 spencer spencer  14K Oct 22 19:15 amy_core_review_2025-10-22_191539.tar.gz
+drwxrwxr-x  6 spencer spencer 4.0K Oct 21 11:13 amy_micro_20251021_111301
+-rw-rw-r--  1 spencer spencer 7.0K Oct 21 11:13 amy_micro_20251021_111301.zip
+-rwxrwxr-x  1 spencer spencer 3.0K Oct 21 11:13 amy_micro_collect.sh
+drwxrwxr-x  2 spencer spencer 4.0K Oct 21 14:58 amy_recover
+drwxrwxr-x  8 spencer spencer 4.0K Oct 21 11:07 amy_snapshot_20251021_110656
+-rw-rw-r--  1 spencer spencer 702M Oct 21 11:08 amy_snapshot_20251021_110656.zip
+-rw-rw-r--  1 spencer spencer   50 Oct 22 19:25 amy_snapshot_2025-10-22_192422.manifest
+-rw-rw-r--  1 spencer spencer 398M Oct 22 19:25 amy_snapshot_2025-10-22_192422.tar.gz
+drwxrwxr-x  2 spencer spencer 4.0K Oct 21 15:22 .amy_snapshots
+-rw-rw-r--  1 spencer spencer 2.9K Oct 21 21:25 Astra_en_raspberry-pi_v3_0_0.zip
+drwxrwxr-x 12 spencer spencer 4.0K Oct 22 13:07 astra_intake_20251022_130728
+-rwxrwxr-x  1 spencer spencer 4.5K Oct 22 13:07 astra_intake.sh
+-rwxrwxr-x  1 spencer spencer 3.0K Oct 22 21:04 astra_restore.sh
+drwxrwxr-x  9 spencer spencer 4.0K Oct 22 21:07 astra_state_20251022_210732
+drwxrwxr-x  9 spencer spencer 4.0K Oct 22 21:13 astra_state_20251022_211351
+-rw-rw-r--  1 spencer spencer 7.4K Oct 22 21:15 astra_state_20251022_211351.tar.gz
+-rwxrwxr-x  1 spencer spencer 3.3K Oct 22 21:05 astra_state_audit.sh
+-rwxrwxr-x  1 spencer spencer 3.6K Oct 22 21:13 astra_state_audit_v2.sh
+-rw-------  1 spencer spencer  86K Oct 22 12:49 .bash_history
+-rw-r--r--  1 spencer spencer  220 Oct  1 01:06 .bash_logout
+-rw-r--r--  1 spencer spencer 3.8K Oct 21 14:30 .bashrc
+drwxrwxr-x  2 spencer spencer 4.0K Oct 21 19:19 bin
+drwx------ 10 spencer spencer 4.0K Oct 22 09:50 .cache
+drwx------ 12 spencer spencer 4.0K Oct 22 09:44 .config
+drwxrwxr-x  2 spencer spencer 4.0K Sep  9 09:38 Desktop
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Documents
+drwxrwxr-x  3 spencer spencer 4.0K Oct 20 10:42 .dotnet
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Downloads
+-rw-rw-r--  1 spencer spencer  11M Oct 20 17:53 examples_backup_20251020_175332.tar.gz
+-rw-rw-r--  1 spencer spencer  119 Oct 20 17:53 examples_backup.sha256
+drwxrwxr-x  4 spencer spencer 4.0K Oct 21 09:50 forensics_golden_v2_20251021_095046
+-rw-rw-r--  1 spencer spencer  56M Oct 21 09:50 forensics_golden_v2_20251021_095046.zip
+-rw-rw-r--  1 spencer spencer    0 Oct 21 18:39 .hushlogin
+prw-rw-r--  1 spencer spencer    0 Oct 22 19:39 .lgd-nfy0
+drwx------  6 spencer spencer 4.0K Oct 22 09:48 .local
+drwxrwxr-x  2 spencer spencer 4.0K Oct 22 21:04 logs
+drwxrwxr-x  2 spencer spencer 4.0K Oct 22 12:49 monty_backups
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Music
+drwxrwxr-x  3 spencer spencer 4.0K Oct 21 19:14 opt
+drwxrwxr-x  9 spencer spencer 4.0K Oct 21 13:34 picrawler
+-rw-rw-r--  1 spencer spencer 9.2G Oct 20 11:31 PiCrawler_Golden_v2_Base_2025-10-20.img.gz
+-rw-rw-r--  1 spencer spencer  123 Oct 20 11:33 PiCrawler_Golden_v2_Base_2025-10-20.sha256
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Pictures
+drwx------  3 spencer spencer 4.0K Oct 20 10:32 .pki
+-rw-r--r--  1 spencer spencer  846 Oct 20 17:07 .profile
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Public
+drwxrw-r--  2 spencer spencer 4.0K Oct 20 21:30 .pv
+drwxrwxr-x  9 spencer spencer 4.0K Oct 21 14:03 robot-hat
+drwxrwxr-x  5 spencer spencer 4.0K Oct 22 21:04 rollback_bak_20251022_210455
+drwx------  2 spencer spencer 4.0K Oct  1 01:16 .ssh
+drwxrwxr-x  2 spencer spencer 4.0K Oct 21 10:10 structure_scan_20251021_101023
+-rw-rw-r--  1 spencer spencer 151K Oct 21 10:10 structure_scan_20251021_101023.zip
+-rw-r--r--  1 spencer spencer    0 Sep  9 09:38 .sudo_as_admin_successful
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Templates
+drwxrwxr-x  2 spencer spencer 4.0K Oct 21 15:01 venvs
+drwxr-xr-x  2 spencer spencer 4.0K Sep  9 09:38 Videos
+drwxrwxr-x  7 spencer spencer 4.0K Oct 20 09:04 vilib
+drwxrwxr-x  2 spencer spencer 4.0K Oct 20 22:10 voices
+drwx------  2 spencer spencer 4.0K Oct 21 18:39 .vscode-remote
+drwx------  5 spencer spencer 4.0K Oct 23 08:47 .vscode-server
+-rw-rw-r--  1 spencer spencer  258 Oct 21 19:11 .wget-hsts
+-rw-------  1 spencer spencer   48 Oct 22 23:36 .Xauthority
+-rw-------  1 spencer spencer 5.1K Oct 23 08:48 .xsession-errors
+-rw-------  1 spencer spencer 5.1K Oct 22 12:27 .xsession-errors.old
+
+=== AMY_CORE STRUCTURE ===
+/home/spencer/amy_core/run_clean.sh
+/home/spencer/amy_core/docs/MASTER_PLAN.txt
+/home/spencer/amy_core/docs/STATE_REPORT.txt
+/home/spencer/amy_core/docs/TECHNICAL_LEDGER.txt
+/home/spencer/amy_core/env.sh
+/home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_102816
+/home/spencer/amy_core/audit/dir_report_20251023_092022.txt
+/home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101908
+/home/spencer/amy_core/amy_wake.py.bak_20251021_214142
+/home/spencer/amy_core/postwake_router.py.bak_2025-10-22_110023
+/home/spencer/amy_core/diag_phase2_20251021_092156/python_env_matrix.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/astra_ppn_filetype.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/picovoice_key_INFO.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/piper_model_files.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/arecord_-l.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy.service.status.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/run_astra.sh
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy_wake.py
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy.service.journal.tail.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/aplay_-l.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amixer_c2_contents.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/keywords_dir_listing.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy-amp.service
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy-amp.service.status.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy-amp.service.journal.tail.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amy_wake_grep.txt
+/home/spencer/amy_core/diag_phase2_20251021_092156/amixer_c2_scontrols.txt
+/home/spencer/amy_core/astra_wake.sh
+/home/spencer/amy_core/astra_sleep.sh
+/home/spencer/amy_core/postwake_router.py.bak_2025-10-22_105457
+/home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_110003
+/home/spencer/amy_core/__pycache__/amy_wake.cpython-313.pyc
+/home/spencer/amy_core/run_astra.sh
+/home/spencer/amy_core/amy_wake.py
+/home/spencer/amy_core/diag_phase2_20251021_092156.tar.gz
+/home/spencer/amy_core/astra_listen_loop.sh
+/home/spencer/amy_core/postwake_router.py
+/home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101615
+/home/spencer/amy_core/keywords/astra.ppn
+/home/spencer/amy_core/amy_wake.py.bak_20251021_214514
+/home/spencer/amy_core/amy_wake.py.bak_20251021_214324
+/home/spencer/amy_core/amy_wake.py.bak_20251021_213824
+
+=== LOGS & BACKUPS ===
+/home/spencer/logs:
+total 480K
+drwxrwxr-x  2 spencer spencer 4.0K Oct 22 21:04 .
+drwx------ 41 spencer spencer 4.0K Oct 22 23:36 ..
+-rw-rw-r--  1 spencer spencer 136K Oct 22 10:01 astra_listen_2025-10-22_095842.log
+-rw-rw-r--  1 spencer spencer  55K Oct 22 10:05 astra_listen_2025-10-22_100441.log
+-rw-rw-r--  1 spencer spencer 1008 Oct 22 10:16 astra_listen_2025-10-22_101627.log
+-rw-rw-r--  1 spencer spencer 3.1K Oct 22 10:20 astra_listen_2025-10-22_101919.log
+-rw-rw-r--  1 spencer spencer 1.8K Oct 22 10:24 astra_listen_2025-10-22_102403.log
+-rw-rw-r--  1 spencer spencer 2.8K Oct 22 10:56 astra_listen_2025-10-22_105521.log
+-rw-rw-r--  1 spencer spencer  52K Oct 22 11:01 astra_listen_2025-10-22_110035.log
+-rw-rw-r--  1 spencer spencer 1.5K Oct 22 19:39 astra_listen_2025-10-22_193911.log
+-rw-rw-r--  1 spencer spencer  716 Oct 22 20:11 astra_listen_2025-10-22_201121.log
+-rw-rw-r--  1 spencer spencer   54 Oct 22 20:11 astra_listen.logpath
+-rw-rw-r--  1 spencer spencer   51 Oct 22 20:21 astra.logpath
+-rw-rw-r--  1 spencer spencer   68 Oct 22 20:11 astra_loop_fast_20251022_201121.log
+-rw-rw-r--  1 spencer spencer   68 Oct 22 19:39 astra_loop_fastenv_20251022_193911.log
+-rw-rw-r--  1 spencer spencer    5 Oct 22 20:21 astra.pid
+-rw-rw-r--  1 spencer spencer  679 Oct 22 21:05 astra_restore_20251022_210455.log
+-rw-rw-r--  1 spencer spencer  871 Oct 21 21:53 astra_run_2025-10-21_215256.log
+-rw-rw-r--  1 spencer spencer  877 Oct 21 21:54 astra_run_2025-10-21_215436.log
+-rw-rw-r--  1 spencer spencer  873 Oct 22 09:57 astra_run_2025-10-22_095747.log
+-rw-rw-r--  1 spencer spencer 2.8K Oct 22 20:11 astra_run_2025-10-22_193910.log
+-rw-rw-r--  1 spencer spencer  401 Oct 22 19:54 astra_run_2025-10-22_195405.log
+-rw-rw-r--  1 spencer spencer  410 Oct 22 20:11 astra_run_2025-10-22_201120.log
+-rw-rw-r--  1 spencer spencer  402 Oct 22 20:19 astra_run_2025-10-22_201925.log
+-rw-rw-r--  1 spencer spencer  402 Oct 22 20:21 astra_run_2025-10-22_202135.log
+-rw-rw-r--  1 spencer spencer  148 Oct 22 19:39 astra_wake_20251022_193910.log
+-rw-rw-r--  1 spencer spencer  201 Oct 22 20:11 astra_wake_fast_20251022_201117.log
+-rw-rw-r--  1 spencer spencer  105 Oct 22 20:24 diag_aplay_manual_20251022_202451.log
+-rw-rw-r--  1 spencer spencer  402 Oct 22 20:25 diag_listener_tail_20251022_202552.log
+-rw-rw-r--  1 spencer spencer  161 Oct 22 20:24 diag_playback_20251022_202451.log
+-rw-rw-r--  1 spencer spencer 1.8K Oct 22 20:24 diag_scripts_head_20251022_202451.log
+-rw-rw-r--  1 spencer spencer  324 Oct 22 19:30 latency_probe_20251022_193019.log
+-rw-rw-r--  1 spencer spencer  369 Oct 22 19:32 latency_probe_20251022_193228_ab.log
+-rw-rw-r--  1 spencer spencer   78 Oct 22 19:32 latency_probe_20251022_193245_ab.log
+-rw-rw-r--  1 spencer spencer  201 Oct 22 20:21 manual_wake_20251022_202132.log
+-rw-rw-r--  1 spencer spencer  976 Oct 22 19:42 mic_ownership_20251022_194245.log
+-rw-rw-r--  1 spencer spencer  444 Oct 22 09:42 morning_wake_2025-10-22_094212.log
+-rw-rw-r--  1 spencer spencer  873 Oct 22 09:43 morning_wake_2025-10-22_094308.log
+-rw-rw-r--  1 spencer spencer  338 Oct 22 09:53 pipeline_2025-10-22_095304.log
+-rw-rw-r--  1 spencer spencer  340 Oct 22 09:55 pipeline_2025-10-22_095523.log
+-rw-rw-r--  1 spencer spencer  239 Oct 22 10:19 pipeline_2025-10-22_101927.log
+-rw-rw-r--  1 spencer spencer  338 Oct 22 10:19 pipeline_2025-10-22_101940.log
+-rw-rw-r--  1 spencer spencer  317 Oct 22 10:24 pipeline_2025-10-22_102410.log
+-rw-rw-r--  1 spencer spencer  340 Oct 22 10:55 pipeline_2025-10-22_105529.log
+-rw-rw-r--  1 spencer spencer  317 Oct 22 10:56 pipeline_2025-10-22_105550.log
+-rw-rw-r--  1 spencer spencer  334 Oct 22 11:00 pipeline_2025-10-22_110042.log
+-rw-rw-r--  1 spencer spencer  317 Oct 22 11:01 pipeline_2025-10-22_110056.log
+-rw-rw-r--  1 spencer spencer  764 Oct 22 09:53 pipeline_test_2025-10-22_095304.log
+-rw-rw-r--  1 spencer spencer  766 Oct 22 09:55 pipeline_test_2025-10-22_095523.log
+-rw-rw-r--  1 spencer spencer  260 Oct 21 18:44 step0_wake_2025-10-21_184406.log
+-rw-rw-r--  1 spencer spencer  260 Oct 21 18:44 step0_wake_2025-10-21_184410.log
+-rw-rw-r--  1 spencer spencer   56 Oct 21 18:54 step0_wake_2025-10-21_185443.log
+-rw-rw-r--  1 spencer spencer  243 Oct 21 19:06 step0_wake_2025-10-21_190602.log
+-rw-rw-r--  1 spencer spencer  873 Oct 21 19:21 step0_wake_2025-10-21_192137.log
+-rw-rw-r--  1 spencer spencer  872 Oct 21 21:45 step2_astra_promptclean_2025-10-21_214521.log
+-rw-rw-r--  1 spencer spencer  207 Oct 21 21:41 step2_astra_promptfix_2025-10-21_214142.log
+-rw-rw-r--  1 spencer spencer  871 Oct 21 21:43 step2_astra_promptfix_2025-10-21_214333.log
+-rw-rw-r--  1 spencer spencer  443 Oct 21 21:30 step2_astra_wake_2025-10-21_213050.log
+-rw-rw-r--  1 spencer spencer  445 Oct 21 21:33 step2_astra_wake_2025-10-21_213343.log
+-rw-rw-r--  1 spencer spencer  869 Oct 21 21:38 step2_astra_wake_2025-10-21_213836.log
+-rw-rw-r--  1 spencer spencer 3.3K Oct 22 19:43 wake_listen_snippets_20251022_194318.log
+
+/home/spencer/monty_backups:
+total 2.9G
+drwxrwxr-x  2 spencer spencer 4.0K Oct 22 12:49 .
+drwx------ 41 spencer spencer 4.0K Oct 22 23:36 ..
+-rw-rw-r--  1 spencer spencer  248 Oct 21 21:47 amy_astra_ready_2025-10-21_2146.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 21:47 amy_astra_ready_2025-10-21_2146.tar.gz
+-rw-rw-r--  1 spencer spencer  441 Oct 21 21:57 amy_astra_sleepwake_2025-10-21_2156.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 21:57 amy_astra_sleepwake_2025-10-21_2156.tar.gz
+-rw-rw-r--  1 spencer spencer  56M Oct 22 12:27 amy_full_golden_2025-10-22_122739.tar.gz.gz
+-rw-rw-r--  1 spencer spencer 2.1K Oct 22 12:27 amy_manifest_2025-10-22_122739.txt
+-rw-rw-r--  1 spencer spencer  263 Oct 21 19:24 amy_v1_recovery_2025-10-21_1923.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 19:24 amy_v1_recovery_2025-10-21_1923.tar.gz
+-rw-rw-r--  1 spencer spencer 8.2K Oct 22 12:45 astra_full_bundle_2025-10-22_124533_manifest.txt
+-rw-rw-r--  1 spencer spencer 1.6G Oct 22 12:46 astra_full_bundle_2025-10-22_124533.tar.gz
+-rw-rw-r--  1 spencer spencer  601 Oct 22 12:49 logs_audit_2025-10-22_124912.txt

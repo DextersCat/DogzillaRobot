@@ -1,0 +1,53 @@
+ASTRA CLEAN DESK SCAN — 2025-10-23T09:32:44+01:00
+Listing non-core files and folders under /home/spencer
+-------------------------------------------------------
+Kept structure (protected):
+  amy_core/, voices/, picrawler/, robot-hat/, logs/, monty_backups/, bin/, amy_core/env/, amy_core/docs/
+
+[CANDIDATE] /home/spencer/astra_state_audit.sh
+[CANDIDATE] /home/spencer/astra_state_audit_v2.sh
+[CANDIDATE] /home/spencer/PiCrawler_Golden_v2_Base_2025-10-20.sha256
+[CANDIDATE] /home/spencer/Downloads
+[CANDIDATE] /home/spencer/amy_snapshot_2025-10-22_192422.tar.gz
+[CANDIDATE] /home/spencer/Documents
+[CANDIDATE] /home/spencer/astra_intake.sh
+[CANDIDATE] /home/spencer/Desktop
+[CANDIDATE] /home/spencer/Videos
+[CANDIDATE] /home/spencer/venvs
+[CANDIDATE] /home/spencer/PiCrawler_Golden_v2_Base_2025-10-20.img.gz
+[CANDIDATE] /home/spencer/astra_restore.sh
+[CANDIDATE] /home/spencer/Templates
+[CANDIDATE] /home/spencer/opt
+[CANDIDATE] /home/spencer/amy_snapshot_20251021_110656
+[CANDIDATE] /home/spencer/astra_state_20251022_211351
+[CANDIDATE] /home/spencer/Music
+[CANDIDATE] /home/spencer/amy_collect.sh
+[CANDIDATE] /home/spencer/amy_recover
+[CANDIDATE] /home/spencer/Public
+[CANDIDATE] /home/spencer/Pictures
+[CANDIDATE] /home/spencer/astra_intake_20251022_130728
+[CANDIDATE] /home/spencer/amy_core_review_2025-10-22_191539_filelist.txt
+[CANDIDATE] /home/spencer/amy_micro_collect.sh
+[CANDIDATE] /home/spencer/examples_backup.sha256
+[CANDIDATE] /home/spencer/amy_micro_20251021_111301
+[CANDIDATE] /home/spencer/vilib
+[CANDIDATE] /home/spencer/amy_snapshot_2025-10-22_192422.manifest
+[CANDIDATE] /home/spencer/astra_state_20251022_210732
+
+Hidden items (dotfiles/folders) that may be obsolete:
+[HIDDEN] /home/spencer/.dotnet
+[HIDDEN] /home/spencer/.pv
+[HIDDEN] /home/spencer/.sudo_as_admin_successful
+[HIDDEN] /home/spencer/.xsession-errors.old
+[HIDDEN] /home/spencer/.pki
+[HIDDEN] /home/spencer/.xsession-errors
+[HIDDEN] /home/spencer/.hushlogin
+[HIDDEN] /home/spencer/.ssh
+[HIDDEN] /home/spencer/.lgd-nfy0
+[HIDDEN] /home/spencer/.wget-hsts
+[HIDDEN] /home/spencer/.vscode-remote
+[HIDDEN] /home/spencer/.Xauthority
+[HIDDEN] /home/spencer/.vscode-server
+
+-------------------------------------------------------
+Scan complete. Review this log; CTO will classify KEEP / DELETE.

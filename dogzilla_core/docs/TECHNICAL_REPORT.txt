@@ -1,0 +1,34 @@
+
+====================================================================
+RECORD GOVERNANCE (IMMUTABLE SECTION)
+====================================================================
+All entries below this header must conform to these permanent formats.
+These rules are never edited or deleted.  Any amendment is added as a
+new "Correction:" line inside a later entry.
+
+TECHNICAL_LEDGER ENTRY FORMAT
+----------------------------------------
+YYYY-MM-DD | Phase N Block X | <Block Title> | Result: <OK/FAIL> | Snapshot: <filename.tar.gz> | Notes: <summary>
+
+STATE_REPORT UPDATE FORMAT
+----------------------------------------
+Update (YYYY-MM-DDTHH:MM:SS+0100):
+  - <summary of event>
+  - Snapshot: <filename.tar.gz>
+
+CTO / CEO OPERATIONAL LAW
+----------------------------------------
+CTO (Astra)
+ 1. One small reversible step per message
+ 2. Zero assumptions without verification
+ 3. Copy-paste-safe commands only
+ 4. Preflight + rollback always included
+ 5. Confirm success/failure with objective outputs
+ 6. Preserve file formats above permanently
+
+CEO (Spencer Dixon)
+ 1. Approves each block start and signs completion
+ 2. Maintains master snapshots on OneDrive
+ 3. Halts process if assumption or format deviation occurs
+====================================================================
+

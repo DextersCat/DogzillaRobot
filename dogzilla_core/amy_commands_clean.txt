@@ -1,0 +1,30 @@
+# AMY CONTROL COMMANDS - CLEAN OUTPUT VERSION
+# Updated: October 24, 2025
+# Use these commands for clean terminal output without ONNX warnings
+
+## PREFERRED COMMANDS (Clean Output):
+./amy_button mode        # Check Amy's operational mode
+./amy_button deskmode    # Confirm desk-safe mode
+./amy_button time        # Speak current time + wave
+./amy_button wave        # Wave gesture only
+./amy_button status      # System status report
+./amy_button test        # Audio output test
+
+## INTERACTIVE MODE (Clean):
+./amy_button             # Interactive command prompt
+
+## ORIGINAL COMMANDS (With ONNX Warnings):
+python3 button_interface.py mode     # Same functions but shows warnings
+python3 button_interface.py          # Interactive mode with warnings
+
+## FOR TOMORROW'S MOBILE TESTING:
+cd /home/spencer/amy_core
+./amy_button mode        # Always check mode first
+./amy_button deskmode    # Confirm safety settings
+./amy_button wave        # Test Amy response
+./amy_button time        # Test with gesture
+./amy_button status      # System check
+
+## SAFETY VERIFICATION:
+./amy_button mode        # Should show "DESK SAFE MODE"
+./amy_button deskmode    # Should confirm no risky movements

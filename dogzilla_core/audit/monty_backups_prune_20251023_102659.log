@@ -1,0 +1,27 @@
+MONTY BACKUPS PRUNE — 2025-10-23T10:26:59+01:00
+Directory: /home/spencer/monty_backups
+-------------------------------------------------------
+[KEEP] GOLDEN:   /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.tar.gz
+[KEEP] MANIFEST: /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.manifest
+[KEEP] BASELINE: amy_snapshot_2025-10-22_192422.tar.gz
+[KEEP] CLEANUP:  /home/spencer/monty_backups/cleanup_B2_backup_20251023_094738.tar.gz
+-------------------------------------------------------
+[info] Candidates to delete: 13
+[DEL] /home/spencer/monty_backups/amy_astra_ready_2025-10-21_2146.manifest.txt
+[DEL] /home/spencer/monty_backups/amy_astra_ready_2025-10-21_2146.tar.gz
+[DEL] /home/spencer/monty_backups/amy_astra_sleepwake_2025-10-21_2156.manifest.txt
+[DEL] /home/spencer/monty_backups/amy_astra_sleepwake_2025-10-21_2156.tar.gz
+[DEL] /home/spencer/monty_backups/amy_full_golden_2025-10-22_122739.tar.gz.gz
+[DEL] /home/spencer/monty_backups/amy_manifest_2025-10-22_122739.txt
+[DEL] /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.manifest
+[DEL] /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.tar.gz
+[DEL] /home/spencer/monty_backups/amy_v1_recovery_2025-10-21_1923.manifest.txt
+[DEL] /home/spencer/monty_backups/amy_v1_recovery_2025-10-21_1923.tar.gz
+[DEL] /home/spencer/monty_backups/astra_full_bundle_2025-10-22_124533_manifest.txt
+[DEL] /home/spencer/monty_backups/astra_full_bundle_2025-10-22_124533.tar.gz
+[DEL] /home/spencer/monty_backups/logs_audit_2025-10-22_124912.txt
+-------------------------------------------------------
+[ok] Deletions complete.
+[log] Ledger updated.
+[log] State report updated.
+-------------------------------------------------------

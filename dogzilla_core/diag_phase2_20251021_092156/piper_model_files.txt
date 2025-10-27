@@ -1,0 +1,2 @@
+-rw-rw-r-- 1 spencer spencer  61M Oct 20 22:03 /home/spencer/voices/en_US-amy-medium.onnx
+-rw-rw-r-- 1 spencer spencer 4.8K Oct 20 22:03 /home/spencer/voices/en_US-amy-medium.onnx.json

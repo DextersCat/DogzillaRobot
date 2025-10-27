@@ -1,0 +1,9 @@
+● amy-amp.service - Amy Amp Enable (HiFiBerry AMP_EN via GPIO20)
+     Loaded: loaded (/etc/systemd/system/amy-amp.service; enabled; preset: enabled)
+     Active: active (exited) since Mon 2025-10-20 22:11:15 BST; 11h ago
+ Invocation: a03e09dda5dc4e4fbea6b5ac9d1d8216
+   Main PID: 828 (code=exited, status=0/SUCCESS)
+        CPU: 8ms
+
+Oct 20 22:11:15 amy systemd[1]: Starting amy-amp.service - Amy Amp Enable (HiFiBerry AMP_EN via GPIO20)...
+Oct 20 22:11:15 amy systemd[1]: Finished amy-amp.service - Amy Amp Enable (HiFiBerry AMP_EN via GPIO20).

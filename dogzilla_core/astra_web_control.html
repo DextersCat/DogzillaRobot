@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Astra Control Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .status {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .status.connected { background-color: #4CAF50; }
+        .status.disconnected { background-color: #F44336; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .panel h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .camera-feed {
+            width: 100%;
+            max-width: 640px;
+            height: 480px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+        }
+        
+        .camera-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 480px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .sensor-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .sensor-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-primary { background: #2196F3; color: white; }
+        .btn-success { background: #4CAF50; color: white; }
+        .btn-warning { background: #FF9800; color: white; }
+        .btn-danger { background: #F44336; color: white; }
+        .btn-secondary { background: #6c757d; color: white; }
+        
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .emergency-btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            background: #FF4444;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #FFD700;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🤖 Astra Control Panel</h1>
+            <div class="status" id="status">🔄 Connecting...</div>
+        </div>
+        
+        <div class="grid">
+            <!-- Camera Panel -->
+            <div class="panel">
+                <h3>📹 Live Camera Feed</h3>
+                <div id="camera-container">
+                    <div class="camera-placeholder">
+                        <div style="font-size: 3em;">📷</div>
+                        <div class="loading">Loading camera feed...</div>
+                    </div>
+                </div>
+                <div class="button-grid">
+                    <button class="btn btn-primary" onclick="refreshCamera()">🔄 Refresh</button>
+                    <button class="btn btn-success" onclick="startCamera()">▶️ Start</button>
+                    <button class="btn btn-danger" onclick="stopCamera()">⏹️ Stop</button>
+                </div>
+            </div>
+            
+            <!-- Sensors Panel -->
+            <div class="panel">
+                <h3>📊 Live Sensor Data</h3>
+                <div class="sensor-grid">
+                    <div class="sensor-item">
+                        <div>🎯 Distance</div>
+                        <div class="sensor-value" id="distance">-- cm</div>
+                    </div>
+                    <div class="sensor-item">
+                        <div>👤 Faces</div>
+                        <div class="sensor-value" id="faces">--</div>
+                    </div>
+                    <div class="sensor-item">
+                        <div>🔋 Battery</div>
+                        <div class="sensor-value" id="battery">-- V</div>
+                    </div>
+                    <div class="sensor-item">
+                        <div>⚡ Charge</div>
+                        <div class="sensor-value" id="batteryPercent">-- %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Voice Commands Panel -->
+        <div class="panel">
+            <h3>🎤 Voice Commands</h3>
+            <div class="phrase-grid">
+                <button class="btn btn-primary" onclick="speak('Hello, this is Astra speaking')">👋 Hello</button>
+                <button class="btn btn-success" onclick="speak('Systems are operational and ready')">✅ Status</button>
+                <button class="btn btn-warning" onclick="speak('Mobile platform test successful')">🎯 Test OK</button>
+                <button class="btn btn-secondary" onclick="speakBattery()">🔋 Battery</button>
+                <button class="btn btn-primary" onclick="speak('Hello Teddy! Astra here and ready to meet you')">🐕 Hi Teddy</button>
+                <button class="btn btn-success" onclick="speak('Time for walkies, Teddy!')">🚶 Walkies</button>
+                <button class="btn btn-warning" onclick="speak('Good boy, Teddy! You are such a good dog')">🌟 Good Boy</button>
+                <button class="btn btn-secondary" onclick="speak('I am Astra, your new robot friend. Ready for adventure?')">🤖 Introduction</button>
+                <button class="btn btn-primary" onclick="speak('Roger that, command acknowledged')">📻 Roger</button>
+                <button class="btn btn-success" onclick="speak('Mission accomplished successfully')">✨ Success</button>
+            </div>
+            
+            <button class="emergency-btn" onclick="emergencyStop()">🚨 EMERGENCY STOP</button>
+        </div>
+
+        <!-- Robot Control Panel -->
+        <div class="panel">
+            <h3>🤖 Robot Controls</h3>
+            <div class="phrase-grid">
+                <button class="btn btn-warning" id="deskSafeBtn" onclick="toggleDeskSafe()">🛡️ Desk Safe: ON</button>
+                <button class="btn btn-primary" onclick="waveGesture()">👋 Wave</button>
+                <button class="btn btn-success" onclick="lookUpGesture()">👀 Look Up</button>
+                <button class="btn btn-secondary" onclick="lookDownGesture()">👇 Look Down</button>
+            </div>
+            <div class="phrase-grid" style="margin-top: 10px;">
+                <button class="btn btn-success" onclick="standGesture()">🧍 Stand</button>
+                <button class="btn btn-warning" onclick="sitGesture()">🪑 Sit</button>
+            </div>
+        </div>
+
+        <!-- Movement Control Panel -->
+        <div class="panel" id="movementPanel" style="display: none;">
+            <h3>🕹️ Movement Controls</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 10px; max-width: 200px; margin: 0 auto;">
+                <div></div>
+                <button class="btn btn-primary" onclick="moveCommand('forward')">⬆️ Forward</button>
+                <div></div>
+                <button class="btn btn-primary" onclick="moveCommand('left')">⬅️ Left</button>
+                <button class="btn btn-danger" onclick="moveCommand('stop')">⏹️ STOP</button>
+                <button class="btn btn-primary" onclick="moveCommand('right')">➡️ Right</button>
+                <div></div>
+                <button class="btn btn-primary" onclick="moveCommand('backward')">⬇️ Back</button>
+                <div></div>
+            </div>
+            <div style="margin-top: 15px; text-align: center;">
+                <div style="color: #FFD700; font-size: 0.9em;">⚠️ Movement enabled - desk safe mode OFF</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const AMY_IP = '192.168.1.4';
+        const API_URL = `http://${AMY_IP}:5001`;
+        const CAMERA_URL = `http://${AMY_IP}:9000/mjpg`;
+        
+        let sensorData = { distance: 0, faces: 0, battery: 0, batteryPercentage: 0 };
+        let connected = false;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            testConnection();
+            initCamera();
+            startSensorPolling();
+            initializeDeskSafeStatus();
+        });
+        
+        async function testConnection() {
+            try {
+                const response = await fetch(`${API_URL}/api/status`);
+                const data = await response.json();
+                connected = data.status === 'online';
+                updateStatus();
+            } catch (error) {
+                connected = false;
+                updateStatus();
+                console.log('Connection failed:', error);
+            }
+        }
+        
+        function updateStatus() {
+            const statusEl = document.getElementById('status');
+            if (connected) {
+                statusEl.textContent = '✅ Connected';
+                statusEl.className = 'status connected';
+            } else {
+                statusEl.textContent = '❌ Disconnected';
+                statusEl.className = 'status disconnected';
+            }
+        }
+        
+        function initCamera() {
+            const container = document.getElementById('camera-container');
+            setTimeout(() => {
+                const timestamp = Date.now();
+                container.innerHTML = `<img class="camera-feed" src="${CAMERA_URL}?t=${timestamp}" 
+                    onerror="showCameraError()" 
+                    onload="console.log('Camera loaded')"
+                    alt="Live Camera Feed">`;
+            }, 2000);
+        }
+        
+        function showCameraError() {
+            const container = document.getElementById('camera-container');
+            container.innerHTML = `
+                <div class="camera-placeholder">
+                    <div style="font-size: 3em;">📷</div>
+                    <div>Camera Feed Unavailable</div>
+                    <div>Tap Start to initialize</div>
+                </div>`;
+        }
+        
+        function refreshCamera() {
+            const container = document.getElementById('camera-container');
+            const timestamp = Date.now();
+            container.innerHTML = `<img class="camera-feed" src="${CAMERA_URL}?t=${timestamp}" 
+                onerror="showCameraError()" 
+                alt="Live Camera Feed">`;
+            speak('Camera feed refreshed');
+        }
+        
+        async function startCamera() {
+            try {
+                const response = await fetch(`${API_URL}/api/camera`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'start' })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    speak('Camera started successfully');
+                    setTimeout(refreshCamera, 2000);
+                }
+            } catch (error) {
+                speak('Camera start failed');
+            }
+        }
+        
+        async function stopCamera() {
+            try {
+                const response = await fetch(`${API_URL}/api/camera`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'stop' })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    speak('Camera stopped successfully');
+                    showCameraError();
+                }
+            } catch (error) {
+                speak('Camera stop failed');
+            }
+        }
+        
+        async function speak(text) {
+            try {
+                const response = await fetch(`${API_URL}/api/command`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: 'speak', text: text })
+                });
+                console.log('Voice command sent:', text);
+            } catch (error) {
+                console.error('Voice command failed:', error);
+            }
+        }
+        
+        function speakBattery() {
+            const text = `Battery level is ${sensorData.batteryPercentage.toFixed(1)} percent at ${sensorData.battery.toFixed(2)} volts`;
+            speak(text);
+        }
+        
+        function emergencyStop() {
+            if (confirm('Emergency Stop - Stop all Astra operations?')) {
+                speak('Emergency stop activated');
+                // Add emergency stop logic here
+            }
+        }
+        
+        async function fetchSensorData() {
+            try {
+                const response = await fetch(`${API_URL}/api/sensors`);
+                const data = await response.json();
+                
+                sensorData = {
+                    distance: data.distance || 0,
+                    faces: data.faces || 0,
+                    battery: data.battery_voltage || 0,
+                    batteryPercentage: data.battery_percentage || 0
+                };
+                
+                updateSensorDisplay();
+                
+                if (!connected) {
+                    connected = true;
+                    updateStatus();
+                }
+            } catch (error) {
+                if (connected) {
+                    connected = false;
+                    updateStatus();
+                }
+            }
+        }
+        
+        function updateSensorDisplay() {
+            document.getElementById('distance').textContent = sensorData.distance.toFixed(1) + ' cm';
+            document.getElementById('faces').textContent = sensorData.faces;
+            document.getElementById('battery').textContent = sensorData.battery.toFixed(2) + ' V';
+            document.getElementById('batteryPercent').textContent = sensorData.batteryPercentage.toFixed(1) + ' %';
+        }
+        
+        function startSensorPolling() {
+            fetchSensorData();
+            setInterval(fetchSensorData, 2000);
+        }
+
+        // Robot control functions
+        let deskSafeMode = true; // Initialize as safe
+
+        async function toggleDeskSafe() {
+            try {
+                const response = await fetch(`${API_URL}/api/desk-safe-toggle`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    deskSafeMode = result.desk_safe_mode;
+                    const btn = document.getElementById('deskSafeBtn');
+                    const movementPanel = document.getElementById('movementPanel');
+                    const status = deskSafeMode ? 'ON' : 'OFF';
+                    const emoji = deskSafeMode ? '🛡️' : '⚠️';
+                    
+                    btn.textContent = `${emoji} Desk Safe: ${status}`;
+                    btn.className = deskSafeMode ? 'btn btn-warning' : 'btn btn-danger';
+                    
+                    // Show/hide movement controls based on desk safe mode
+                    if (deskSafeMode) {
+                        movementPanel.style.display = 'none';
+                        speak('Desk safe mode enabled - movement disabled');
+                    } else {
+                        movementPanel.style.display = 'block';
+                        speak('Desk safe mode disabled - movement controls active');
+                    }
+                } else {
+                    speak('Desk safe toggle failed');
+                }
+            } catch (error) {
+                speak('Desk safe toggle error');
+                console.error('Desk safe toggle error:', error);
+            }
+        }
+
+        async function waveGesture() {
+            try {
+                const response = await fetch(`${API_URL}/api/wave`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak('Wave gesture complete');
+                } else {
+                    speak('Wave gesture failed');
+                }
+            } catch (error) {
+                speak('Wave gesture error');
+                console.error('Wave gesture error:', error);
+            }
+        }
+
+        async function lookUpGesture() {
+            try {
+                const response = await fetch(`${API_URL}/api/look-up`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak('Look up stance adjusted');
+                } else {
+                    speak('Look up failed');
+                }
+            } catch (error) {
+                speak('Look up error');
+                console.error('Look up error:', error);
+            }
+        }
+
+        async function lookDownGesture() {
+            try {
+                const response = await fetch(`${API_URL}/api/look-down`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak('Look down stance adjusted');
+                } else {
+                    speak('Look down failed');
+                }
+            } catch (error) {
+                speak('Look down error');
+                console.error('Look down error:', error);
+            }
+        }
+
+        async function standGesture() {
+            try {
+                const response = await fetch(`${API_URL}/api/stand`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak('Standing up, ready for action');
+                } else {
+                    speak('Stand failed');
+                }
+            } catch (error) {
+                speak('Stand error');
+                console.error('Stand error:', error);
+            }
+        }
+
+        async function sitGesture() {
+            try {
+                const response = await fetch(`${API_URL}/api/sit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak('Sitting down, servos powered down');
+                } else {
+                    speak('Sit failed');
+                }
+            } catch (error) {
+                speak('Sit error');
+                console.error('Sit error:', error);
+            }
+        }
+
+        // Movement control function
+        async function moveCommand(direction) {
+            try {
+                const response = await fetch(`${API_URL}/api/command`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: direction })
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    speak(`Movement ${direction} executed`);
+                } else {
+                    speak(`Movement failed: ${result.error || 'Unknown error'}`);
+                }
+            } catch (error) {
+                speak('Movement command error');
+                console.error('Movement error:', error);
+            }
+        }
+
+        // Initialize desk safe status
+        async function initializeDeskSafeStatus() {
+            try {
+                const response = await fetch(`${API_URL}/api/status-extended`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    deskSafeMode = data.desk_safe_mode;
+                    const btn = document.getElementById('deskSafeBtn');
+                    const movementPanel = document.getElementById('movementPanel');
+                    const status = deskSafeMode ? 'ON' : 'OFF';
+                    const emoji = deskSafeMode ? '🛡️' : '⚠️';
+                    
+                    btn.textContent = `${emoji} Desk Safe: ${status}`;
+                    btn.className = deskSafeMode ? 'btn btn-warning' : 'btn btn-danger';
+                    
+                    // Show/hide movement controls based on initial desk safe mode
+                    movementPanel.style.display = deskSafeMode ? 'none' : 'block';
+                }
+            } catch (error) {
+                console.error('Failed to get desk safe status:', error);
+            }
+        }
+        
+        // Auto-refresh camera every 30 seconds to prevent freezing
+        setInterval(() => {
+            if (connected) {
+                const img = document.querySelector('.camera-feed');
+                if (img) {
+                    const timestamp = Date.now();
+                    img.src = `${CAMERA_URL}?t=${timestamp}`;
+                }
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

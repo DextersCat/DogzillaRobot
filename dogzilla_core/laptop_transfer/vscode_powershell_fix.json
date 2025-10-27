@@ -1,0 +1,33 @@
+{
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "versionName": "Windows PowerShell 5.1"
+        },
+        {
+            "exePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe", 
+            "versionName": "PowerShell 7"
+        },
+        {
+            "exePath": "C:\\Users\\spenc\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe",
+            "versionName": "PowerShell 7 (Store)"
+        }
+    ],
+    "powershell.powerShellDefaultVersion": "Windows PowerShell 5.1",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": "C:\\Windows\\System32\\cmd.exe",
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "icon": "terminal-powershell"
+        }
+    }
+}

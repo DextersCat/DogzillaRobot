@@ -1,0 +1,47 @@
+MONTY_BACKUPS AUDIT — 2025-10-23T10:17:49+01:00
+-------------------------------------------------------
+total 14G
+drwxrwxr-x  2 spencer spencer 4.0K Oct 23 09:55 .
+drwx------ 29 spencer spencer 4.0K Oct 23 09:55 ..
+-rw-rw-r--  1 spencer spencer  248 Oct 21 21:47 amy_astra_ready_2025-10-21_2146.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 21:47 amy_astra_ready_2025-10-21_2146.tar.gz
+-rw-rw-r--  1 spencer spencer  441 Oct 21 21:57 amy_astra_sleepwake_2025-10-21_2156.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 21:57 amy_astra_sleepwake_2025-10-21_2156.tar.gz
+-rw-rw-r--  1 spencer spencer  56M Oct 22 12:27 amy_full_golden_2025-10-22_122739.tar.gz.gz
+-rw-rw-r--  1 spencer spencer 2.1K Oct 22 12:27 amy_manifest_2025-10-22_122739.txt
+-rw-rw-r--  1 spencer spencer 1.3K Oct 23 09:30 amy_snapshot_GOLDEN_V1.0_20251023_093000.manifest
+-rw-rw-r--  1 spencer spencer 398M Oct 23 09:30 amy_snapshot_GOLDEN_V1.0_20251023_093000.tar.gz
+-rw-rw-r--  1 spencer spencer 1.3K Oct 23 09:55 amy_snapshot_GOLDEN_V1.0_20251023_094738.manifest
+-rw-rw-r--  1 spencer spencer 398M Oct 23 09:56 amy_snapshot_GOLDEN_V1.0_20251023_094738.tar.gz
+-rw-rw-r--  1 spencer spencer  263 Oct 21 19:24 amy_v1_recovery_2025-10-21_1923.manifest.txt
+-rw-rw-r--  1 spencer spencer 420M Oct 21 19:24 amy_v1_recovery_2025-10-21_1923.tar.gz
+-rw-rw-r--  1 spencer spencer 8.2K Oct 22 12:45 astra_full_bundle_2025-10-22_124533_manifest.txt
+-rw-rw-r--  1 spencer spencer 1.6G Oct 22 12:46 astra_full_bundle_2025-10-22_124533.tar.gz
+-rw-rw-r--  1 spencer spencer 9.5G Oct 23 09:55 cleanup_B2_backup_20251023_094738.tar.gz
+-rw-rw-r--  1 spencer spencer  601 Oct 22 12:49 logs_audit_2025-10-22_124912.txt
+
+File details by age:
+2025-10-21 19:24:35.2620978730  440138048  /home/spencer/monty_backups/amy_v1_recovery_2025-10-21_1923.tar.gz
+2025-10-21 19:24:35.6941008440        263  /home/spencer/monty_backups/amy_v1_recovery_2025-10-21_1923.manifest.txt
+2025-10-21 21:47:28.5749595610  440149047  /home/spencer/monty_backups/amy_astra_ready_2025-10-21_2146.tar.gz
+2025-10-21 21:47:28.6789596050        248  /home/spencer/monty_backups/amy_astra_ready_2025-10-21_2146.manifest.txt
+2025-10-21 21:57:19.3599759800  440146677  /home/spencer/monty_backups/amy_astra_sleepwake_2025-10-21_2156.tar.gz
+2025-10-21 21:57:19.4639762520        441  /home/spencer/monty_backups/amy_astra_sleepwake_2025-10-21_2156.manifest.txt
+2025-10-22 12:27:50.0086889920   58369201  /home/spencer/monty_backups/amy_full_golden_2025-10-22_122739.tar.gz.gz
+2025-10-22 12:27:52.0366448770       2069  /home/spencer/monty_backups/amy_manifest_2025-10-22_122739.txt
+2025-10-22 12:45:34.8100186170       8324  /home/spencer/monty_backups/astra_full_bundle_2025-10-22_124533_manifest.txt
+2025-10-22 12:46:27.6061043060  1702701519  /home/spencer/monty_backups/astra_full_bundle_2025-10-22_124533.tar.gz
+2025-10-22 12:49:12.2144776550        601  /home/spencer/monty_backups/logs_audit_2025-10-22_124912.txt
+2025-10-23 09:30:01.0287005140       1275  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.manifest
+2025-10-23 09:30:53.2009569510  416893820  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.tar.gz
+2025-10-23 09:55:55.7503656860  10100871576  /home/spencer/monty_backups/cleanup_B2_backup_20251023_094738.tar.gz
+2025-10-23 09:55:56.3223703300       1319  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.manifest
+2025-10-23 09:56:50.8067997780  416891007  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.tar.gz
+
+-------------------------------------------------------
+Keep policy:
+  • GOLDEN V1.0 snapshot (20251023_094738) — KEEP
+  • Baseline snapshot (20251022_192422) — KEEP
+  • Any older snapshots or pre-governance backups — CANDIDATES for delete
+  • cleanup_B2_backup_*.tar.gz — keep 14 days for rollback
+-------------------------------------------------------

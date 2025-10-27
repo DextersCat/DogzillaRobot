@@ -1,0 +1,142 @@
+🗺️ ASTRA SYSTEM ARCHITECTURE MAP
+=====================================
+Complete file structure and component documentation for cross-platform development
+
+HARDWARE PLATFORM: Raspberry Pi 5 16GB + Robot HAT + PiCrawler
+IP ADDRESS: 192.168.1.4
+HOSTNAME: amy
+
+🏗️ CORE SYSTEM STRUCTURE:
+=====================================
+
+📁 /home/spencer/amy_core/          [MAIN ASTRA DIRECTORY]
+├── 📄 mobile_api_server.py         [Flask API backend - Port 5001]
+├── 📄 astra_web_control.html       [Web interface - Port 8080]
+├── 📄 web_server.py                [Web server daemon]
+├── 📄 start_astra_complete.sh      [System startup script]
+├── 📄 optimized_camera.py          [Camera optimization utilities]
+├── � *.wav                        [Temp TTS files - auto-cleaned]
+├── 📄 *.log                        [Service logs - api_server.log, camera.log, web_server.log]
+├── �📁 docs/                        [System documentation]
+│   ├── 📄 PROJECT_STATUS_V2.0.txt  [Complete achievement log]
+│   ├── 📄 NEXT_STEPS.txt           [Priority tasks]
+│   ├── 📄 CONTINUATION_PROMPT.txt  [Session continuity]
+│   ├── 📄 SLEEP_MODE_SPEC.txt      [Sleep feature specification]
+│   ├── 📄 SYSTEM_MAP.txt           [This file]
+│   └── 📄 QUICK_REFERENCE.txt      [Operations guide]
+├── 📁 keywords/                    [Wake word models]
+│   ├── 📄 astra.ppn                [Porcupine wake word model]
+│   └── 📄 computer.ppn             [Alternative wake word]
+└── 📁 env/                         [Environment configs]
+    └── 📄 astra_audio.env          [Audio device settings]
+
+📁 /home/spencer/AmyMobileApp/       [REACT NATIVE MOBILE APP]
+├── 📄 App.js                       [Main mobile interface]
+├── 📄 package.json                 [NPM dependencies]
+└── 📁 node_modules/                [Mobile app dependencies]
+
+📁 /home/spencer/bin/                [SYSTEM UTILITIES]
+├── 📄 amy_say                      [TTS script with Robot HAT]
+├── 📄 piper                        [TTS binary wrapper]
+├── 📄 amp_on.sh                    [Audio amplifier control]
+└── 📄 amp_off.sh                   [Audio amplifier control]
+
+📁 /home/spencer/voices/             [TTS VOICE MODELS]
+├── 📄 en_US-amy-medium.onnx        [Astra voice model]
+└── 📄 en_US-amy-medium.onnx.json   [Voice model config]
+
+📁 /home/spencer/picrawler/          [MOTION PLATFORM]
+├── 📄 setup.py                     [PiCrawler installation]
+├── 📁 picrawler/                   [Motion control library]
+├── 📁 examples/                    [Motion examples]
+└── 📁 my_venv/                     [PiCrawler Python environment]
+
+📁 /home/spencer/robot-hat/          [HARDWARE ABSTRACTION]
+├── 📄 setup.py                     [Robot HAT installation]
+├── 📁 robot_hat/                   [Hardware control library]
+└── 📁 tests/                       [Hardware tests]
+
+📁 /home/spencer/vilib/              [CAMERA SYSTEM]
+├── 📁 vilib/                       [Camera library]
+└── 📁 examples/                    [Camera examples]
+
+🔧 SYSTEM SERVICES:
+=====================================
+
+🐧 SYSTEMD SERVICE:
+├── 📄 /etc/systemd/system/astra.service  [Auto-start service]
+└── Status: sudo systemctl status astra
+
+🌐 NETWORK ENDPOINTS:
+├── 🔗 Web Control: http://192.168.1.4:8080/astra_web_control.html
+├── 🔗 API Backend: http://192.168.1.4:5001/api/
+├── 🔗 Camera Stream: http://192.168.1.4:9000/mjpg
+└── 🔗 Mobile App: exp://192.168.1.4:8083
+
+🎤 AUDIO SYSTEM:
+├── 🔊 Device: plughw:sndrpihifiberry (Robot HAT)
+├── 🎙️ Input: Default USB/HAT microphone
+├── 🗣️ TTS: Piper + en_US-amy-medium.onnx
+└── 🎵 Test: /home/spencer/bin/amy_say "test message"
+
+📹 CAMERA SYSTEM:
+├── 📷 Hardware: OV5647 camera module
+├── 📡 Stream: vilib MJPEG server
+├── 🌐 URL: http://192.168.1.4:9000/mjpg
+└── 🔧 Control: /api/camera endpoints
+
+🤖 MOTION SYSTEM:
+├── 🦾 Platform: PiCrawler 4-leg spider robot
+├── 📚 Library: /home/spencer/picrawler/picrawler/
+├── 🎮 Control: Robot HAT GPIO + servo control
+└── 🛡️ Safety: Desk safe mode (movement disabled)
+
+📊 SENSOR SYSTEM:
+├── 📏 Distance: HC-SR04 ultrasonic (GPIO D2/D3)
+├── 👤 Vision: OpenCV face detection via camera
+├── 🔋 Battery: Robot HAT voltage monitoring
+└── 📡 Data: Real-time via /api/sensors
+
+💾 BACKUP LOCATIONS:
+├── 📦 Local: /home/spencer/monty_backups/
+├── 💻 PC Copy: [User maintains separately]
+└── 📋 Manifests: /home/spencer/logs/checks/
+
+🔐 AUTHENTICATION:
+├── 🏠 Network: Local WiFi 192.168.1.x
+├── 🚪 Access: No authentication (local network only)
+└── 🛡️ Security: Firewall + local network isolation
+
+⚡ POWER MANAGEMENT:
+├── 🔋 Battery: Monitored via Robot HAT
+├── 🔌 Charging: External charger (not always connected)
+├── 😴 Sleep Mode: [PLANNED] Voice/activity disable
+└── 🛡️ Desk Safe: Movement disabled for desktop testing
+
+📝 CONFIGURATION FILES:
+├── 🔧 Systemd: /etc/systemd/system/astra.service
+├── 🎵 Audio: /home/spencer/amy_core/env/astra_audio.env
+├── 📱 Mobile: /home/spencer/AmyMobileApp/package.json
+└── 🌐 Web: /home/spencer/amy_core/astra_web_control.html
+
+🚀 STARTUP SEQUENCE:
+=====================================
+1. Boot → systemd starts astra.service
+2. astra.service → runs start_astra_complete.sh
+3. API Server starts (port 5001)
+4. Camera system starts (port 9000)  
+5. Web server starts (port 8080)
+6. Mobile app available (port 8083)
+7. All services running and accessible
+
+🛠️ DEVELOPMENT TOOLS:
+=====================================
+├── 📱 Mobile: Expo CLI + React Native
+├── 🌐 Web: Vanilla HTML/CSS/JavaScript
+├── 🔧 Backend: Python Flask + CORS
+├── 🎤 Voice: Porcupine + Faster-Whisper + Piper
+├── 📹 Camera: vilib + OpenCV
+├── 🤖 Motion: PiCrawler + Robot HAT
+└── 🔊 Audio: aplay + Robot HAT DAC
+
+This map provides complete system context for development on any platform!

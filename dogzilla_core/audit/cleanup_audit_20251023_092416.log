@@ -1,0 +1,35 @@
+ASTRA CLEANUP AUDIT — Stage A (read-only)
+Thu 23 Oct 09:24:16 BST 2025
+-----------------------------------------------------
+
+[HOME ROOT FILES]
+[DELETE] /home/spencer/structure_scan_20251021_101023.zip
+[DELETE] /home/spencer/Astra_en_raspberry-pi_v3_0_0.zip
+[DELETE] /home/spencer/examples_backup_20251020_175332.tar.gz
+[DELETE] /home/spencer/amy_micro_20251021_111301.zip
+[DELETE] /home/spencer/forensics_golden_v2_20251021_095046.zip
+[DELETE] /home/spencer/astra_state_20251022_211351.tar.gz
+[DELETE] /home/spencer/amy_astra_intake_20251022_130728.tar.gz
+[DELETE] /home/spencer/amy_core_review_2025-10-22_191539.tar.gz
+[DELETE] /home/spencer/amy_snapshot_20251021_110656.zip
+
+[LEGACY FOLDERS]
+[DELETE] /home/spencer/.amy_backups
+[DELETE] /home/spencer/.amy_snapshots
+[DELETE] /home/spencer/amy_backup
+[DELETE] /home/spencer/structure_scan_20251021_101023
+[DELETE] /home/spencer/forensics_golden_v2_20251021_095046
+[DELETE] /home/spencer/rollback_bak_20251022_210455
+
+[LOGS OLDER THAN 7 DAYS]
+
+[OLD SNAPSHOTS / DUPLICATES]
+
+[KEEP — RUNTIME & DOCS]
+[KEEP] ~/amy_core/
+[KEEP] ~/voices/
+[KEEP] ~/picrawler/  ~/robot-hat/  ~/bin/
+[KEEP] ~/amy_core/docs (governance)
+[KEEP] ~/monty_backups/amy_snapshot_2025-10-22_192422.tar.gz
+-----------------------------------------------------
+Audit complete — review this file before cleanup.

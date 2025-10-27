@@ -1,0 +1,44 @@
+CLEANDESK CONFIRM B-2 — 2025-10-23T09:47:38+01:00
+Backup bundle (removed items): /home/spencer/monty_backups/cleanup_B2_backup_20251023_094738.tar.gz
+-------------------------------------------------------------
+[backup] Archiving 29 items before deletion…
+[backup] Created: /home/spencer/monty_backups/cleanup_B2_backup_20251023_094738.tar.gz
+---- Deleting home-level items ----
+[DEL] dir  /home/spencer/amy_recover
+[DEL] dir  /home/spencer/amy_snapshot_20251021_110656
+[DEL] dir  /home/spencer/astra_intake_20251022_130728
+[DEL] dir  /home/spencer/astra_state_20251022_210732
+[DEL] dir  /home/spencer/astra_state_20251022_211351
+[DEL] file /home/spencer/PiCrawler_Golden_v2_Base_2025-10-20.img.gz
+[DEL] file /home/spencer/PiCrawler_Golden_v2_Base_2025-10-20.sha256
+[DEL] file /home/spencer/amy_core_review_2025-10-22_191539_filelist.txt
+[DEL] file /home/spencer/examples_backup.sha256
+[DEL] dir  /home/spencer/amy_micro_20251021_111301
+[DEL] file /home/spencer/.xsession-errors
+[DEL] file /home/spencer/.xsession-errors.old
+[DEL] file /home/spencer/astra_state_audit.sh
+[DEL] file /home/spencer/astra_state_audit_v2.sh
+[DEL] file /home/spencer/astra_restore.sh
+[DEL] file /home/spencer/astra_intake.sh
+[DEL] file /home/spencer/amy_collect.sh
+[DEL] file /home/spencer/amy_micro_collect.sh
+---- Deleting amy_core items ----
+[DEL] file /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101615
+[DEL] file /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_101908
+[DEL] file /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_102816
+[DEL] file /home/spencer/amy_core/astra_listen_loop.sh.bak_2025-10-22_110003
+[DEL] file /home/spencer/amy_core/amy_wake.py.bak_20251021_213824
+[DEL] file /home/spencer/amy_core/amy_wake.py.bak_20251021_214142
+[DEL] file /home/spencer/amy_core/amy_wake.py.bak_20251021_214324
+[DEL] file /home/spencer/amy_core/amy_wake.py.bak_20251021_214514
+[DEL] file /home/spencer/amy_core/postwake_router.py.bak_2025-10-22_105457
+[DEL] file /home/spencer/amy_core/postwake_router.py.bak_2025-10-22_110023
+[DEL] file /home/spencer/amy_core/diag_phase2_20251021_092156.tar.gz
+-------------------------------------------------------------
+[ok] Deletion pass complete.
+[snap] Creating GOLDEN V1.0 snapshot…
+[snap] Snapshot:  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.tar.gz
+[snap] Manifest:  /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_094738.manifest
+[log] Ledger updated.
+[log] State report updated.
+-------------------------------------------------------------

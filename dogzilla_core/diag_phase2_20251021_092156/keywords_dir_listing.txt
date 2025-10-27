@@ -1,0 +1,1 @@
+ls: cannot access '/home/spencer/amy_core/keywords': No such file or directory

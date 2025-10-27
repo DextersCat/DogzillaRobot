@@ -1,0 +1,112 @@
+ASTRA PROJECT — MASTER OPERATIONAL PLAN (v1.1)
+------------------------------------------------
+Date: 2025-10-23
+Authors: Spencer Dixon (CEO) / Astra (CTO)
+
+PURPOSE
+To define the permanent governance, working method, and technical controls for the
+Astra (Amy) voice-assistant project.  This document is the constitution of the build;
+it is never edited in place—future revisions are numbered v1.2, v1.3 … etc.
+
+------------------------------------------------
+A.  BASELINE & KNOWLEDGE STATE
+------------------------------------------------
+• Golden reference snapshot: amy_snapshot_2025-10-22_192422.tar.gz  
+• Verified hardware:
+    – HiFiBerry DAC (card 1)  →  playback = plughw:CARD=sndrpihifiberry,DEV=0  
+    – USB Mic (card 3)        →  capture  = plughw:CARD=Device,DEV=0
+• Environment: Debian 13 (Trixie) × Python 3.13 × ALSA only
+• Core folders:  
+    ~/amy_core/{env,docs,labs} , ~/logs , ~/monty_backups
+• Source of truth files:  MASTER_PLAN.txt / STATE_REPORT.txt / TECHNICAL_LEDGER.txt
+
+------------------------------------------------
+B.  WORKING METHOD (BLOCK-BASED DEVELOPMENT)
+------------------------------------------------
+Each session is a “Block” with its own title and scope.
+Block types:
+    • Audit/Verify  (Read-only validation)
+    • Design/Plan  (No code, written proposal)
+    • Implement/Test (Controlled change + log)
+    • Snapshot/Manifest (State archive)
+
+Every block ends with verification logs and a signed result in TECHNICAL_LEDGER.txt.
+
+------------------------------------------------
+C.  CHANGE-CONTROL PRINCIPLES
+------------------------------------------------
+1  Small & reversible  → max 1 file per change + 1-line rollback  
+2  Snapshot first    → manifest + checksum every edit  
+3  Audit logs always on → no log = abort  
+4  Canonical env    → source ~/amy_core/env/astra_audio.env  
+5  Single mic owner  → astra_listen_loop.sh only  
+6  By-name devices only → no plughw:<number>,<number>  
+7  Approved runs only  → “RUN BLOCK – Approved Test” label required  
+
+------------------------------------------------
+D.  PROJECT PHASES — HIGH LEVEL GOALS
+------------------------------------------------
+Phase 0 – Baseline Verification  (complete 2025-10-23)  
+Phase 1 – Environment Control & System Cleanup  
+Phase 2 – Core Voice Control (Sleep/Wake/Status)  
+Phase 3 – Desk-Safe Gestures (Wave/Nod/Bow/Look)  
+Phase 4 – Conversational AI Integration (GPT pipeline)  
+Phase 5 – Status & Diagnostics layer  
+Phase 6 – Installer / Golden V2 release
+
+------------------------------------------------
+E.  VERIFICATION & EVIDENCE POLICY
+------------------------------------------------
+• Every run → timestamped log in ~/logs  
+• Every snapshot → manifest with checksum + env dump  
+• CEO sign-off & CTO verification required per block  
+E.5 Audit Discipline:
+  • Before any block of work or each morning at 09:00, run ~/bin/amy_audit.sh.
+  • Work proceeds only if the audit RESULT=PASS.
+  • All tests and fixes produce a timestamped log under ~/logs/checks/.
+
+------------------------------------------------
+F.  RISK MANAGEMENT
+------------------------------------------------
+| Risk | Mitigation |
+|------|-------------|
+| Audio device drift | By-name ALSA contract |
+| Dual mic ownership | Single pipeline rule |
+| Log loss | Mandatory log creation |
+| Config creep | Golden snapshots |
+| Latency regression | JSON timings in router |
+| Human error | Snapshot + rollback before edit |
+
+------------------------------------------------
+G.  CTO ADDITIONS (v1.1)
+------------------------------------------------
+1  Technical Ledger → chronological record of each block  
+2  Component version headers in source files  
+3  Weekly Golden Integrity checksum routine  
+4  Security hygiene (no keys in code, clean /tmp)  
+5  CEO/CTO review at phase end  
+6  Redundant Golden backup (PC + OneDrive)  
+7  Device-discovery utility for early warning of audio changes  
+8  README_phaseX.md per phase for documentation  
+
+------------------------------------------------
+H.  NEXT ACTIONS
+------------------------------------------------
+• File structure locked as above  
+• Phase 1 Block A – System Cleanup Audit → next session  
+• End-of-Block deliverable → ASTRA_GOLDEN_V1.0 snapshot  
+
+------------------------------------------------
+END OF MASTER PLAN v1.1
+
+PHASE 1 BLOCK C — Runtime Integrity Checks
+Status: COMPLETE
+Date: 2025-10-23
+Summary:
+  • Full audit automation implemented (amy_audit.sh @09:00 daily)
+  • Service containment, verification, and controlled apply – PASS
+  • Runtime stability confirmed – PASS
+  • Golden Snapshot created: amy_snapshot_GOLDEN_V1.0_2025-10-23_200201
+  • Backup copied to PC master folder for off-device safety
+Next Phase:
+  PHASE 2 — Keyword & Intent Validation ("Astra" → "What's the time?")

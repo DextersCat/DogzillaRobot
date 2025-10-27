@@ -1,0 +1,17 @@
+[Unit]
+Description=Amy Voice Assistant (ALSA only, Piper, Porcupine) [VENV-ENABLED]
+After=network.target sound.target
+
+[Service]
+Type=simple
+User=spencer
+WorkingDirectory=/home/spencer/amy_core
+EnvironmentFile=/home/spencer/amy_core/env/astra_audio.env
+ExecStartPre=-/home/spencer/bin/amp_on.sh
+ExecStopPost=-/home/spencer/bin/amp_off.sh
+ExecStart=/bin/bash -lc 'source /home/spencer/picrawler/my_venv/bin/activate && export PICOVOICE_ACCESS_KEY="$(</home/spencer/.config/picovoice.key)" && exec /home/spencer/picrawler/my_venv/bin/python3 /home/spencer/amy_core/amy_wake.py'
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

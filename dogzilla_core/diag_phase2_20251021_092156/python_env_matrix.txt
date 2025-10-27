@@ -1,0 +1,19 @@
+===== SHELL ENV =====
+PATH=/home/spencer/venvs/amy/bin:/home/spencer/venvs/amy/bin:/home/spencer/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+APLAY_DEV=plughw:2,0
+AREC_DEV=plughw:3,0
+
+===== WHICH BINARIES =====
+/home/spencer/venvs/amy/bin/python3
+/home/spencer/venvs/amy/bin/piper
+/usr/bin/espeak-ng
+
+===== PYTHON INTERPRETERS TEST =====
+--- /home/spencer/venvs/amy/bin/python3 ---
+Python 3.13.5
+executable: /home/spencer/venvs/amy/bin/python3
+pvporcupine: /home/spencer/venvs/amy/lib/python3.13/site-packages/pvporcupine/__init__.py
+--- /usr/bin/python3 ---
+Python 3.13.5
+executable: /usr/bin/python3
+pvporcupine: MISSING -> No module named 'pvporcupine'

@@ -1,0 +1,11 @@
+INTEGRITY REPORT — 20251023_154628
+Host: amy
+User: spencer
+
+## Checksums
+a32c498e45176f8973785a87907731ae53a31d2724050af7671f861e5c6dbf15  STATE_REPORT.txt
+71ccc2450112fd8f57d9fa9d527b09bd42cc6aec44bdff86ce3e7143147f1ef4  TECHNICAL_LEDGER.txt
+
+## Logs directory status
+Logs dir: /home/spencer/logs
+ - .keep

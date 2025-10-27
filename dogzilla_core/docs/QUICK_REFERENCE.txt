@@ -1,0 +1,73 @@
+🔧 ASTRA QUICK REFERENCE GUIDE
+==============================
+Fast lookup for common operations and troubleshooting
+
+🚀 SYSTEM CONTROL:
+├── Start All: sudo systemctl start astra
+├── Stop All: sudo systemctl stop astra  
+├── Status: sudo systemctl status astra
+├── Manual Start: /home/spencer/amy_core/start_astra_complete.sh
+└── Logs: journalctl -u astra -f
+
+🌐 QUICK ACCESS URLs:
+├── Web Control: http://192.168.1.4:8080/astra_web_control.html
+├── API Status: http://192.168.1.4:5001/api/status
+├── Camera Stream: http://192.168.1.4:9000/mjpg
+└── Sensor Data: http://192.168.1.4:5001/api/sensors
+
+🎤 VOICE TESTING:
+├── Direct TTS: /home/spencer/bin/amy_say "test message"
+├── API Test: curl -X POST http://192.168.1.4:5001/api/command -H "Content-Type: application/json" -d '{"command":"speak","text":"test"}'
+└── Audio Check: aplay -D plughw:sndrpihifiberry test.wav
+
+📱 MOBILE DEVELOPMENT:
+├── Start Dev Server: cd /home/spencer/AmyMobileApp && npm start
+├── Mobile URL: exp://192.168.1.4:8083
+├── Restart Metro: npm start --reset-cache
+└── Install Deps: npm install
+
+🤖 MOTION TESTING:
+├── PiCrawler Import: sys.path.append('/home/spencer/picrawler')
+├── Robot HAT Import: sys.path.append('/home/spencer/robot-hat')
+├── Test Movement: cd /home/spencer/picrawler/examples
+└── Safety Mode: Always enabled (desk safe mode)
+
+📹 CAMERA OPERATIONS:
+├── Start Stream: python3 -c "from vilib import Vilib; Vilib.camera_start(); Vilib.display(web=True)"
+├── Stop Stream: pkill -f vilib
+├── Test URL: curl -I http://192.168.1.4:9000/mjpg
+└── Manual Control: /api/camera endpoints
+
+🔧 COMMON TROUBLESHOOTING:
+├── No Audio: Check aplay -l | grep -i "hifiberry\|hat"
+├── No Camera: ls /dev/video* && check vilib import
+├── No Motion: Check /home/spencer/picrawler and robot-hat paths
+├── API Down: sudo systemctl restart astra
+├── Port Conflicts: netstat -tulpn | grep -E "5001|8080|9000"
+├── Import Errors: Check Python paths for picrawler/robot-hat
+└── Web Interface 404: Check web server is running on port 8080
+
+📁 KEY DIRECTORIES TO KNOW:
+├── Main Code: /home/spencer/amy_core/
+├── Mobile App: /home/spencer/AmyMobileApp/
+├── Hardware Libs: /home/spencer/robot-hat/ and /home/spencer/picrawler/
+├── Voice Models: /home/spencer/voices/
+├── System Utils: /home/spencer/bin/
+└── Documentation: /home/spencer/amy_core/docs/
+
+🆔 HARDWARE IDENTIFIERS:
+├── Audio Device: plughw:sndrpihifiberry
+├── Camera Device: /dev/video0 (usually)
+├── GPIO Platform: Robot HAT (I2C + GPIO expander)
+├── Motion Platform: PiCrawler (4-leg spider robot)
+└── Network: 192.168.1.4 (static/DHCP reservation)
+
+🔄 DEVELOPMENT WORKFLOW:
+1. Check system status: sudo systemctl status astra
+2. Access web interface for testing
+3. Edit code in appropriate directory
+4. Restart relevant service: sudo systemctl restart astra
+5. Test via web interface or API calls
+6. Check logs if issues: journalctl -u astra -f
+
+This reference should help with cross-platform development!

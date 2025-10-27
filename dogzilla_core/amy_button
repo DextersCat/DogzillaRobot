@@ -1,0 +1,12 @@
+#!/bin/bash
+# Amy Button Interface - Clean Output Version
+# Suppresses ONNX Runtime GPU detection warnings
+
+cd /home/spencer/amy_core
+
+# Set environment variables to suppress ONNX warnings
+export ORT_LOGGING_LEVEL=3
+export OMP_NUM_THREADS=1
+
+# Run button interface with stderr filtered to remove GPU warnings
+python3 button_interface.py "$@" 2> >(grep -v "GPU device discovery failed" >&2)

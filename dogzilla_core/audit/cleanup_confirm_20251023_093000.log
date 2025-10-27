@@ -1,0 +1,29 @@
+ASTRA CLEANUP CONFIRM — 2025-10-23T09:30:00+01:00
+Audit source: /home/spencer/amy_core/audit/cleanup_audit_20251023_092416.log
+-----------------------------------------------------
+[info] Candidates — DELETE: 15 | ARCHIVE: 0
+[DEL] file /home/spencer/structure_scan_20251021_101023.zip
+[DEL] file /home/spencer/Astra_en_raspberry-pi_v3_0_0.zip
+[DEL] file /home/spencer/examples_backup_20251020_175332.tar.gz
+[DEL] file /home/spencer/amy_micro_20251021_111301.zip
+[DEL] file /home/spencer/forensics_golden_v2_20251021_095046.zip
+[DEL] file /home/spencer/astra_state_20251022_211351.tar.gz
+[DEL] file /home/spencer/amy_astra_intake_20251022_130728.tar.gz
+[DEL] file /home/spencer/amy_core_review_2025-10-22_191539.tar.gz
+[DEL] file /home/spencer/amy_snapshot_20251021_110656.zip
+[DEL] dir  /home/spencer/.amy_backups
+[DEL] dir  /home/spencer/.amy_snapshots
+[DEL] dir  /home/spencer/amy_backup
+[DEL] dir  /home/spencer/structure_scan_20251021_101023
+[DEL] dir  /home/spencer/forensics_golden_v2_20251021_095046
+[DEL] dir  /home/spencer/rollback_bak_20251022_210455
+-----------------------------------------------------
+[ok] Deletion pass complete.
+[sweep] logs older than 7 days
+-----------------------------------------------------
+[snap] Creating Golden V1.0 snapshot…
+[snap] Snapshot: /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.tar.gz
+[snap] Manifest: /home/spencer/monty_backups/amy_snapshot_GOLDEN_V1.0_20251023_093000.manifest
+[log] Ledger updated.
+[log] State report updated.
+-----------------------------------------------------

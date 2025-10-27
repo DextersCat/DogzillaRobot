@@ -1,0 +1,76 @@
+Update (2025-10-26T13:40:00+0100):
+  - Mobile Robot Platform Implementation Complete
+  - PiCrawler coordinate system mapping achieved
+  - Complete backup: ASTRA_COMPLETE_BACKUP_20251026_133837.tar.gz
+  - API server operational with all gesture and movement controls
+  - Documentation: Coordinate mapping and technical ledger updated
+
+Update (2025-10-25T17:30:00+0100):
+  - Mobile Robot Platform Deployment Complete
+  - Hardware: Raspberry Pi 5 + SunFounder PiCrawler integrated
+  - Software: Flask API backend + iPad web interface operational
+  - Systems: Movement, gestures, safety controls, battery monitoring
+  - Status: Ready for iPad testing and voice command integration
+
+Update (2025-10-23T15:30:45+0100):
+  - Phase 1 Block C preflight audit complete (env/services/alsa/python/disk)
+  - Snapshot: amy_snapshot_RUNTIMECHECK_V1.0_20251023_153045.tar.gz
+
+Update (2025-10-23T16:— UK):
+- Phase 1 Block C PASSED: by-name ALSA env verified; Piper synthesis & playback OK.
+- Evidence: ~/logs/phase1_blockC.log (Front_Right + Amy voice test PASS).
+- Service kept disabled pending clean re-enable with canonical env.
+
+[AUTO-AUDIT]
+Executed: <YYYY-MM-DDTHH:MM:SS+01:00>
+Source: ~/logs/checks/audit_<YYYY-MM-DD_HHMMSS>.log
+Result: PASS/FAIL
+Notes: By-name ALSA enforced; per-check logs in ~/logs/checks/; no unapproved folders.
+
+[SERVICE STATUS]
+As of 2025-10-23T19:52:09+01:00
+Amy service verified and active under systemd.
+ExecStart=/usr/bin/python3 /home/spencer/amy_core/amy_wake.py
+EnvironmentFile=/home/spencer/amy_core/env/astra_audio.env
+Audit trail: ~/logs/checks/service_apply_2025-10-23_195209.log
+
+[SERVICE STATUS]
+As of 2025-10-23T19:55:36+01:00 — amy.service active (running).
+ExecStart=/usr/bin/python3 /home/spencer/amy_core/amy_wake.py
+EnvironmentFile=/home/spencer/amy_core/env/astra_audio.env
+Input=plughw:CARD=Device,DEV=0  Output=plughw:CARD=sndrpihifiberry,DEV=0
+Audit trail: ~/logs/checks/service_apply_2025-10-23_195209.log
+
+[PHASE 1 BLOCK C — Runtime Integrity Checks]
+Completed 2025-10-23T19:59:08+01:00
+All service verification and runtime health checks PASSED.
+Amy operational with verbal status active at startup.
+Evidence logs: ~/logs/checks/*2025-10-23_19*.log
+
+[SNAPSHOT STATUS]
+2025-10-23T20:02:01+01:00 — Golden Snapshot V1.0 created and validated.
+Manifest: ~/logs/checks/amy_snapshot_GOLDEN_V1.0_2025-10-23_200201.manifest
+Archive:  ~/monty_backups/archives/amy_snapshot_GOLDEN_V1.0_2025-10-23_200201.tar.gz
+Size ≈ 3–4 KB, verified by CEO (Spencer)
+All Phase 1 Block C objectives met.
+[2025-10-24 12:00Z] CTO: VOICE_PIPELINE_FAULTTREE_v1.0 issued and verified. All future diagnostics must reference this document before acting. Directive 001-A reaffirmed.
+[2025-10-24T11:53:58+01:00] CTO: Filed VOICE_PIPELINE_FAULTTREE_v1.0 at ~/amy_core/docs/VOICE_PIPELINE_FAULTTREE_v1.0.txt. Directive 001-A reaffirmed. Next actions: R-1 (instrument listener), R-2 (wave after reply once pipeline PASS).
+
+Update (2025-10-24T12:12:47+01:00):
+  - GitHub Copilot analysis complete: Root cause confirmed as STT capture timing issue
+  - "Astra" wake word detected correctly, but STT hears "Astro" from wake word tail bleed
+  - Pre-intervention baseline backup: PRE_COPILOT_BASELINE_20251024_121247.tar.gz
+  - Solution identified: settle=0.35s, record=5s (per Fault-Tree v1.0)
+
+Update (2025-10-24T12:27:30+01:00):
+  - Virtual environment integration completed: SystemD service now uses /home/spencer/picrawler/my_venv/
+  - Package enhancements installed: webrtcvad (voice activity detection), librosa, noisereduce
+  - Environment standardization: activate_amy.sh script created for consistent development setup
+  - Service status: [VENV-ENABLED] ready for timing fix implementation
+
+Update (2025-10-24T12:42:30+01:00):
+  - DESK-SAFE MODE: FULLY OPERATIONAL ✅
+  - 6-week blocker: RESOLVED (timing fix successful)
+  - Robot HAT speaker: Working (amp_on.sh + HiFiBerry DAC)
+  - End-to-end pipeline: Wake word → STT → Intent → TTS → Motion ALL WORKING
+  - Amy ready for daily use in desk-safe mode
