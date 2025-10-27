@@ -1,0 +1,45 @@
+# Dogzilla S2 Python Dependencies
+# Core robot control
+sunfounder-robot-hat==2.0.0
+picrawler==1.0.0
+
+# Web framework and API
+flask==3.0.0
+requests==2.31.0
+flask-cors==4.0.0
+
+# Computer vision and camera
+opencv-python==4.8.0.76
+numpy==1.24.3
+Pillow==10.0.0
+
+# Voice recognition and TTS
+picovoice==3.0.0
+porcupine==3.0.0
+piper-tts==1.2.0
+pyaudio==0.2.11
+
+# Audio processing
+sounddevice==0.4.6
+wave==0.0.2
+librosa==0.10.1
+
+# System utilities
+psutil==5.9.5
+threading-timer==0.1.0
+python-dotenv==1.0.0
+
+# Hardware interfaces
+RPi.GPIO==0.7.1
+spidev==3.6
+smbus==1.1.post2
+
+# Development and debugging
+pytest==7.4.0
+black==23.7.0
+flake8==6.0.0
+
+# Optional: Advanced features
+face-recognition==1.3.0
+speech-recognition==3.10.0
+pyttsx3==2.90
